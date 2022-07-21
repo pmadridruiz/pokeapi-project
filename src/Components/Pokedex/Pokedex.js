@@ -1,5 +1,5 @@
 
-function Pokemon() {
+function Pokedex() {
   return (
     <>
       <h1>Inicio API POKEMON</h1>
@@ -7,4 +7,4 @@ function Pokemon() {
   );
 }
 
-export default Pokemon;
+export default Pokedex;
