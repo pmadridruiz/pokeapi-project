@@ -12,6 +12,7 @@ function Root() {
                     paddingBottom: "1rem",
                 }}
             >
+                <Link to="/">Inicio</Link> |{" "}
                 <Link to="/buscar">Buscar Pókemon</Link> |{" "}
                 <Link to="/batalla">Batalla Pókemon</Link> |{" "}
                 <Link to="/todos">Pókemones</Link> |{" "}
