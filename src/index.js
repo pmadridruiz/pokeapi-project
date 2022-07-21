@@ -10,11 +10,18 @@ import Pokedex from './Components/Pokedex/Pokedex';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  // <React.StrictMode>
-  <BrowserRouter>
-    <Root />
-  </BrowserRouter>
-  // </React.StrictMode>
+  <React.StrictMode>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Root />}>
+          <Route path="buscar" element={<Finder />} />
+          <Route path="batalla" element={<Combat />} />
+          <Route path="todos" element={<List />} />
+          <Route path="pokedex" element={<Pokedex />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

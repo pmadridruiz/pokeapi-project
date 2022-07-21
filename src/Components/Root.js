@@ -1,5 +1,5 @@
 // APP BASE
-import { Link } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 
 function Root() {
 
@@ -12,10 +12,13 @@ function Root() {
                     paddingBottom: "1rem",
                 }}
             >
-                <Link to="/search">Buscar Pókemon</Link> |{" "}
-                <Link to="/combat">Batalla Pókemon</Link> |{" "}
+                <Link to="/buscar">Buscar Pókemon</Link> |{" "}
+                <Link to="/batalla">Batalla Pókemon</Link> |{" "}
+                <Link to="/todos">Pókemones</Link> |{" "}
                 <Link to="/pokedex">Pokédex</Link>
+
             </nav>
+            <Outlet />
         </>
     );
 }
