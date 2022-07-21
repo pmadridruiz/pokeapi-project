@@ -5,13 +5,8 @@ function Root() {
 
     return (
         <>
-            <h1>Pókemon App</h1>
-            <nav
-                style={{
-                    borderBottom: "solid 1px",
-                    paddingBottom: "1rem",
-                }}
-            >
+            <h1 className='bg-red-400 text-center m-4 text-white font-bold'>Pókemon App</h1>
+            <nav className='border-b pb-4 bg-blue-600 font-bold text-center text-white'>
                 <Link to="/">Inicio</Link> |{" "}
                 <Link to="/buscar">Buscar Pókemon</Link> |{" "}
                 <Link to="/batalla">Batalla Pókemon</Link> |{" "}
@@ -25,3 +20,9 @@ function Root() {
 }
 
 export default Root;
+
+
+// style={{
+//     borderBottom: "solid 1px",
+//     paddingBottom: "1rem",
+// }}
