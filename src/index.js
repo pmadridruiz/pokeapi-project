@@ -1,26 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
 import Root from './Components/Root';
-// import Combat from './Components/Combat/Combat';
-// import List from './Components/List/List';
-// import Pokedex from './Components/Pokedex/Pokedex';
+import Combat from './Components/Combat/Combat'
+import List from './Components/List/List'
+import Pokemon from './Components/Pokemon/Pokemon'
+import History from './Components/History/History';
+import Home from './Components/Home/Home';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   // <React.StrictMode>
   <BrowserRouter>
-    <Root />
-    {/* <Routes>
-      <Route path="/" element={<Root />}>
-        <Route path="buscar" element={<Finder />} />
-        <Route path="batalla" element={<Combat />} />
-        <Route path="todos" element={<List />} />
-        <Route path="pokedex" element={<Pokedex />} />
+    <Routes>
+      <Route path='/' element={<Root />}>
+        <Route path='/inicio' element={<Home />} />
+        <Route path='/pokemon' element={<Pokemon />} />
+        <Route path='/historial' element={<History />} />
+        <Route path='/lista' element={<List />} />
+        <Route path='/combate' element={<Combat />} />
       </Route>
-    </Routes > */}
-  </BrowserRouter >
+    </Routes>
+  </BrowserRouter>
   // </React.StrictMode>
 );
 
