@@ -1,9 +1,8 @@
 // Barra Buscadora SEARCH
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import './Search.css'
 import PokeLogo from '../../Assets/pokemonlogo.png'
-import { Link } from 'react-router-dom'
+import { Link, Outlet } from 'react-router-dom'
 
 function Search(props) {
 
@@ -50,7 +49,6 @@ function Search(props) {
             if (busqueda === '') {
                 return ''
             }
-
             console.log(busqueda)
         }
     }
@@ -107,6 +105,10 @@ function Search(props) {
                     </div>
                 </div >
             </nav >
+
+            <section>
+                <Outlet />
+            </section>
 
         </>
 

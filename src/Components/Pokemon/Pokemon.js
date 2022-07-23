@@ -1,4 +1,4 @@
-import CardPokemon from "../Cards/CardPokemon";
+import CardPokemon from "../Card/CardPokemon";
 
 function Pokemon() {
 

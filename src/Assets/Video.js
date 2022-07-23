@@ -6,7 +6,7 @@ import '../Assets/Video.css'
 function Video() {
     return (
         <div className='video'>
-            <video src={pokeVideo} autoPlay loop controls='play' />
+            <video src={pokeVideo} autoPlay loop />
         </div>
     )
 }
