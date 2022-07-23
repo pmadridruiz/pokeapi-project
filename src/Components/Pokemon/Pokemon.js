@@ -1,10 +1,10 @@
-import Card from "../Cards/CardList";
+import CardPokemon from "../Cards/CardPokemon";
 
 function Pokemon() {
 
   return (
     <>
-      <Card />
+      <CardPokemon />
     </>
   );
 }

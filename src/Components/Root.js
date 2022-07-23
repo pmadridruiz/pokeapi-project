@@ -1,7 +1,7 @@
 import '.././index.css'
 import { Outlet } from "react-router-dom"
 import Search from './Search/Search';
-// import Search from './Search/Search';
+
 
 function Root() {
 

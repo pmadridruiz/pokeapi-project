@@ -45,12 +45,13 @@ function List() {
 
                 {allPokemons.map((pokemon, idx) => (<Card
                     link={() => navigate(`/pokemon?${pokemon.name}`)}
-                    pokeball={pokemon.id}
+                    id={pokemon.id}
                     name={pokemon.name}
-                    image={pokemon.sprites.front_default}
+                    imageFront={pokemon.sprites.front_default}
+                    imageBack={pokemon.sprites.back_default}
                     type={pokemon.types[0].type.name}
                     key={idx} />))}
-                <button onClick={() => { getAllPokemons() }} type="button" class="w-full items-center text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Cargar más Pókemones</button>
+                <button onClick={() => { getAllPokemons() }} type="button" class="m-auto w-full items-center text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Cargar más Pókemones</button>
             </div>
 
         </>
