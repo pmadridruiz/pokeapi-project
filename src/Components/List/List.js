@@ -1,5 +1,4 @@
 // TODOS LOS POKEMONES
-import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react'
 import CardList from '../Card/CardList'
 import '../List/List.css'
@@ -37,7 +36,6 @@ function List() {
         getAllPokemons()
     }, [])
 
-    const navigate = useNavigate();
 
     return (
         <>
@@ -46,13 +44,15 @@ function List() {
                     <button disabled type="button">Consejo: Si pasas el cursor por arriba del pókemon te mostrará su imagen de frente y de espaldas.</button>
                 </div>
 
-                {allPokemons.map((pokemon, idx) => (<CardList
-                    id={pokemon.id}
-                    name={pokemon.name}
-                    imageFront={pokemon.sprites.front_default}
-                    imageBack={pokemon.sprites.back_default}
-                    type={pokemon.types[0].type.name}
-                    key={idx} />))}
+                <div>
+                    {allPokemons.map((pokemon, idx) => (<CardList
+                        id={pokemon.id}
+                        name={pokemon.name}
+                        imageFront={pokemon.sprites.front_default}
+                        imageBack={pokemon.sprites.back_default}
+                        type={pokemon.types[0].type.name}
+                        key={idx} />))}
+                </div>
 
             </div>
             <div onClick={() => { getAllPokemons() }} className="md:w-auto justify-center m-2 flex text-center text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-md text-sm py-2.5 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">

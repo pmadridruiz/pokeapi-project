@@ -27,7 +27,6 @@ function CardPokemon(props) {
                 <h1 className='font-bold capitalize'>{props.name}</h1>
                 <img onMouseOver={handleChangeImageBack} onMouseOut={handleChangeImageFront} onClick={handleChangeImageFront} src={imageSource} alt={props.name} />
                 <button onClick={handleChangeImageShiny}>Shiny{' | '}</button>
-
                 <button onClick={handleChangeImageFemale}>{' | '}Female</button>
 
             </div>
@@ -49,13 +48,13 @@ function CardPokemon(props) {
 
             </div>
 
-            <div className="mt-2 text-white bg-red-400">
+            <div className="mt-2 text-white bg-red-400 pb-7">
                 <h1>Estaditicas Base</h1>
                 {props.stats.map((stat, idx) => (
                     <div key={idx}>
                         <span>{stat.stat.name}</span>
-                        <div class="w-full bg-gray-200 rounded-full">
-                            <div class="bg-blue-600 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-l-full" style={{ width: `${stat.base_stat}` }}> {`${stat.base_stat}%`}</div>
+                        <div className="w-full bg-gray-200 rounded-full">
+                            <div className="text-white bg-indigo-400 rounded text-xs font-medium py-[1px] text-center" style={{ width: `${stat.base_stat}%` }}> {`${stat.base_stat}%`}</div>
                         </div>
                     </div>
                 ))}
