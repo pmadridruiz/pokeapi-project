@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-function Card({ id, name, imageFront, imageBack, type, link }) {
+function CardList({ id, name, imageFront, imageBack, type, link }) {
 
     const [imageSource, setImageSource] = useState(imageFront)
 
@@ -23,7 +23,7 @@ function Card({ id, name, imageFront, imageBack, type, link }) {
             </div>
 
             <div className='m-auto text-left'>
-                <p>asdasdas</p>
+                <p>Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.</p>
             </div>
             <div className='rounded-2xl py-1.5 float-right'>
                 <a href={`/pokemon/${name}`} onClick={link}>
@@ -33,11 +33,9 @@ function Card({ id, name, imageFront, imageBack, type, link }) {
                 </a>
 
             </div>
-
-
         </div >
 
     )
 }
 
-export default Card
+export default CardList

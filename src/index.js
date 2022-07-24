@@ -6,7 +6,7 @@ import List from './Components/List/List'
 import Pokemon from './Components/Pokemon/Pokemon'
 import History from './Components/History/History';
 import Home from './Components/Home/Home';
-import Search from './Components/Search/Search';
+import NavBar from './Components/NavBar/NavBar';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -14,7 +14,7 @@ root.render(
   // <React.StrictMode>
   <BrowserRouter>
     <Routes>
-      <Route path="/" element={<Search />}>
+      <Route path="/" element={<NavBar />}>
         <Route index path='/inicio' element={<Home />} />
         <Route path='/historial' element={<History />} />
         <Route path='/lista' element={<List />} />
