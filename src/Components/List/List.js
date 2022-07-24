@@ -1,8 +1,7 @@
 // TODOS LOS POKEMONES
+import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react'
 import CardList from '../Card/CardList'
-// import CardPokemon from '../Card/CardPokemon';
-import { useNavigate } from 'react-router-dom';
 import '../List/List.css'
 
 function List() {
