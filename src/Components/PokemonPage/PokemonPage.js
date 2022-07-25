@@ -18,7 +18,7 @@ function PokemonPage() {
         if (pokename && !pokemon.name) {
             getPokemon(pokename)
         }
-    }, [pokename])
+    }, [pokemon.name, pokename])
 
     return (
         <>

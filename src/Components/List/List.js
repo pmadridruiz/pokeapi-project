@@ -12,9 +12,7 @@ function List() {
     const getAllPokemons = async () => {
         const res = await fetch(loadMorePokemons)
         const data = await res.json()
-
         setLoadMorePokemons(data.next)
-        // console.log(data)
 
         // For del array de objetos pokemon de la api y los seteamos en nuestro array [allPokemons] 
         // Al mismo tiempo que llamamos a la api.
@@ -34,6 +32,7 @@ function List() {
 
     useEffect(() => {
         getAllPokemons()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
 

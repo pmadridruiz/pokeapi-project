@@ -23,14 +23,16 @@ function CardPokemon(props) {
 
     return (
 
-
         <div>
             <div className='text-center p-6 m-2 border-solid rounded-md shadow bg-red-400'>
                 <div className='flex items-center p-6 m-2 border-solid rounded-md text-center shadow bg-red-400'>
-                    <h1 h1 className='font-bold capitalize' > {props.name}</h1 >
+                    <h1 className='font-bold capitalize' > {props.name}</h1>
                     <img onMouseOver={handleChangeImageBack} onMouseOut={handleChangeImageFront} onClick={handleChangeImageFront} src={imageSource} alt={props?.name} />
-                    <button onClick={handleChangeImageShiny}>Shiny{' | '}</button>
-                    {props?.spriteFemale && <button onClick={handleChangeImageFemale}>{' | '}Female</button>}
+
+                    <button onClick={handleChangeImageShiny} type="button" class="text-white bg-yellow-500 hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:focus:ring-yellow-900">
+                        Shiny</button>
+                    {props?.spriteFemale && <button onClick={handleChangeImageFemale} type="button" class=" text-white bg-purple-700 hover:bg-purple-800 focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900">
+                        Female</button>}
 
                 </div >
 
@@ -38,7 +40,7 @@ function CardPokemon(props) {
                     <h1 className='font-bold capitalize'>Habilidades</h1>
                     {props.abilities.map((ability, idx) => (
                         <div key={idx}>
-                            <span capitalize>{ability.ability.name}</span>
+                            <span className='capitalize'>{ability.ability.name}</span>
                         </div>
                     ))}
                     <br></br>
@@ -52,12 +54,12 @@ function CardPokemon(props) {
                 </div>
 
                 <div className="p-6 m-2 text-black font bg-red-400 pb-7">
-                    <h1>Estaditicas Base</h1>
+                    <h1 className='font-bold capitalize'>Estaditicas Base</h1>
                     {props.stats.map((stat, idx) => (
                         <div key={idx}>
                             <span>{stat.stat.name}</span>
                             <div className="w-full bg-gray-200 rounded-full">
-                                <div className="text-white bg-indigo-400 rounded text-xs font-medium py-[1px] text-center" style={{ width: `${stat.base_stat}%` }}> {`${stat.base_stat}%`}</div>
+                                <div className="rounded-full max-w-full text-white bg-indigo-400 text-xs font-medium py-[1px] text-center content-center" style={{ width: `${stat.base_stat}%` }}> {`${stat.base_stat}%`}</div>
                             </div>
                         </div>
                     ))}
@@ -65,7 +67,7 @@ function CardPokemon(props) {
 
             </div>
 
-        </div>
+        </div >
 
 
 
