@@ -8,7 +8,7 @@ function NavBar(props) {
 
     return (
         <>
-            <nav className="border-gray-200 px-2 sm:px-4 py-2.5">
+            <nav className="border-gray-200 px-2 sm:px-4 py-2.5 dark:bg-red-400">
                 <div className="container  flex flex-wrap justify-between items-center mx-auto">
                     <Link to="/inicio" className="flex items-center">
                         <img src={PokeLogo} className="mr-3 h-6 sm:h-9" alt="Pokelogo" />
@@ -27,17 +27,17 @@ function NavBar(props) {
                                 <li>Inicio</li>
                             </Link>
 
-                            {/* <Link to="/historial" className="block py-2 pr-4 pl-3 md:text-black border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:dark:hover:text-gray-300 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
-                                <li>Historial</li>
-                            </Link> */}
+                            <Link to="/pokedex" className="block py-2 pr-4 pl-3 md:text-black border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:dark:hover:text-gray-300 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                                <li>Pokedéx</li>
+                            </Link>
 
                             <Link to="/lista" className="block py-2 pr-4 pl-3 md:text-black border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:dark:hover:text-gray-300 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
                                 <li>Lista de Pókemones</li>
                             </Link>
 
-                            {/* <Link to="/combate" className="block py-2 pr-10 pl-3 md:text-black border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:dark:hover:text-gray-300 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
-                                <li>Combate</li>
-                            </Link> */}
+                            <Link to="/batalla" className="block py-2 pr-10 pl-3 md:text-black border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:dark:hover:text-gray-300 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                                <li>Batalla</li>
+                            </Link>
 
                         </ul>
 

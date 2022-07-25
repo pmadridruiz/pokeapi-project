@@ -39,12 +39,11 @@ function List() {
 
     return (
         <>
-            <div>
-                <div className="md:w-auto justify-center m-2 flex text-center text-white bg-gray-800 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-md text-sm py-2.5 mb-2 dark:bg-gray-800 dark:focus:ring-gray-700 dark:border-gray-700">
-                    <button disabled type="button">Consejo: Si pasas el cursor por arriba del pókemon te mostrará su imagen de frente y de espaldas.</button>
-                </div>
-
-                <div>
+            <div className="md:w-auto justify-center m-2 flex text-center text-white bg-gray-800 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-md text-sm py-2.5 mb-2 dark:bg-gray-800 dark:focus:ring-gray-700 dark:border-gray-700">
+                <button disabled type="button">Consejo: Si pasas el cursor por arriba del pókemon te mostrará su imagen de frente y de espaldas.</button>
+            </div>
+            <div className='flex-1'>
+                <div className='grid grid-cols-4 content-center gap-1'>
                     {allPokemons.map((pokemon, idx) => (<CardList
                         id={pokemon.id}
                         name={pokemon.name}
@@ -53,7 +52,6 @@ function List() {
                         type={pokemon.types[0].type.name}
                         key={idx} />))}
                 </div>
-
             </div>
             <div onClick={() => { getAllPokemons() }} className="md:w-auto justify-center m-2 flex text-center text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-md text-sm py-2.5 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">
                 <button onClick={() => { getAllPokemons() }} type="button">Cargar más Pókemones</button>
