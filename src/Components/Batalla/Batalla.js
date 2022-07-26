@@ -24,7 +24,7 @@ function Batalla() {
         const resultado = await res.json()
         const vidaUno = resultado.stats.find(stat => stat.stat.name === 'hp')
         setPokemon(resultado)
-        setHpPokemonUno(vidaUno?.base_stat * 10)
+        setHpPokemonUno(vidaUno?.base_stat * 8)
         setCargando(false)
     }
 
@@ -34,7 +34,7 @@ function Batalla() {
         const resultadoDos = await res.json()
         const vidaDos = resultadoDos.stats.find(stat => stat.stat.name === 'hp')
         setPokemonDos(resultadoDos)
-        setHpPokemonDos(vidaDos.base_stat * 10)
+        setHpPokemonDos(vidaDos.base_stat * 8)
         setCargandoDos(false)
     }
 

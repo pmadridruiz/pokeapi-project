@@ -3,7 +3,12 @@ import '../Home/Home.css'
 
 function Home() {
     return (
-        <></>
+        <>
+            <div className='absolute'>
+
+                <button>ASDASDAS</button>
+            </div>
+        </>
     )
 }
 

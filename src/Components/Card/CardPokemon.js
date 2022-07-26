@@ -24,8 +24,8 @@ function CardPokemon(props) {
     return (
 
         <div>
-            <div className='text-center p-2 m-2 border-solid rounded bg-red-400'>
-                <div className='shadow-md flex flex-col items-center justify-center p-6 m-2 border-solid rounded-md text-center bg-red-400'>
+            <div className='text-center p-2 m-2 border-solid rounded bg-black'>
+                <div className='shadow-md flex flex-col items-center justify-center p-6 m-2 border-solid rounded-md text-center bg-gradient-to-r from-rose-500 via-red-400 to-red-500'>
                     <h1 className='font-bold capitalize'> {props.name}</h1>
 
                     <img onMouseOver={handleChangeImageBack} onMouseOut={handleChangeImageFront} onClick={handleChangeImageFront} src={imageSource} alt={props?.name} />
@@ -46,7 +46,7 @@ function CardPokemon(props) {
 
                 </div >
 
-                <div className=" shadow-md p-6 m-2 border-solid rounded-md text-center bg-red-400">
+                <div className="shadow-md p-6 m-2 border-solid rounded-md text-center bg-gradient-to-r from-rose-500 via-red-400 to-red-500">
                     <h1 className='font-bold capitalize pb-2'>Habilidades</h1>
                     {props.abilities.map((ability, idx) => (
                         <div key={idx}>
@@ -55,7 +55,7 @@ function CardPokemon(props) {
                     ))}
                 </div>
 
-                <div>
+                <div className='shadow-md p-6 m-2 border-solid rounded-md text-center bg-gradient-to-r from-rose-500 via-red-400 to-red-500'>
                     <h1 className='font-bold capitalize pb-2'>Tipos</h1>
                     {props.types.map((type, idx) => (
                         <div key={idx}>
@@ -65,22 +65,22 @@ function CardPokemon(props) {
                 </div>
 
 
-                <div className="p-4 m-2 text-black font bg-red-400 pb-7">
-                    <h1 className='font-bold capitalize pb-2'>Movimientos</h1>
+                <div className="p-4 m-2 pb-7 shadow-md border-solid rounded-md text-center bg-gradient-to-r from-rose-500 via-red-400 to-red-500">
+                    <h1 className='font-bold capitalize pb-4'>Movimientos</h1>
                     {props?.moves?.map((move, idx) => (
                         <div className='md:inline-block text-center m-1' key={idx}>
-                            <p className='capitalize'>{move?.move?.name}</p>
+                            <button disabled type="button" class="capitalize text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">{move?.move?.name}</button>
                         </div>
                     ))}
                 </div>
 
-                <div className="p-6 m-2 text-black font bg-red-400 pb-7">
-                    <h1 className='font-bold capitalize pb-2'>Estaditicas Base</h1>
+                <div className="p-6 m-2 pb-7 shadow-md border-solid rounded-md text-center bg-gradient-to-r from-rose-500 via-red-400 to-red-500">
+                    <h1 className='font-bold capitalize pb-2'>Estadísticas Base</h1>
                     {props.stats.map((stat, idx) => (
                         <div key={idx}>
-                            <span>{stat.stat.name}</span>
+                            <p className='uppercase pt-2 pb-1'>{stat.stat.name}</p>
                             <div className="w-full bg-gray-200 rounded-full">
-                                <div className="rounded-full max-w-full text-white bg-indigo-400 text-xs font-medium py-[1px] text-center content-center" style={{ width: `${stat.base_stat}%` }}> {`${stat.base_stat}%`}</div>
+                                <div className="pb-2 rounded-full max-w-full text-white bg-black text-xs font-medium py-[1px] text-center content-center"> {`${stat.base_stat}`}</div>
                             </div>
                         </div>
                     ))}
