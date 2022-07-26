@@ -49,6 +49,7 @@ function List() {
                         imageFront={pokemon.sprites.front_default}
                         imageBack={pokemon.sprites.back_default}
                         type={pokemon.types[0].type.name}
+                        baseExp={pokemon.base_experience}
                         key={idx} />))}
                 </div>
             </div>

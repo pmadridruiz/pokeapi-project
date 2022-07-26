@@ -24,42 +24,48 @@ function CardPokemon(props) {
     return (
 
         <div>
-            <div className='text-center p-6 m-2 border-solid rounded bg-red-400'>
-                <div className='flex flex-col items-center justify-center p-6 m-2 border-solid rounded-md text-center bg-red-400'>
-                    <h1 className='font-bold capitalize' > {props.name}</h1>
+            <div className='text-center p-2 m-2 border-solid rounded bg-red-400'>
+                <div className='shadow-md flex flex-col items-center justify-center p-6 m-2 border-solid rounded-md text-center bg-red-400'>
+                    <h1 className='font-bold capitalize'> {props.name}</h1>
 
                     <img onMouseOver={handleChangeImageBack} onMouseOut={handleChangeImageFront} onClick={handleChangeImageFront} src={imageSource} alt={props?.name} />
-                    <div className='flex'>
-                        <h1>Peso: {props?.weight}</h1>
+                    <h1 className='font-bold flex-col'> ID: <div className='inline font-normal'>#{props.id}</div></h1>
+                    <div className='md:flex'>
+                        <h1 className='font-bold'>Peso: <div className='inline font-normal'>{props?.weight}</div></h1>
                     </div>
-                    <div className='flex'>
-                        <h1>Experiencia Base: {props?.baseExp}</h1>
+                    <div className='md:flex pb-4'>
+                        <h1 className='font-bold'>Experiencia Base: <div className='inline font-normal'>{props?.baseExp} </div></h1>
                     </div>
-                    <button onClick={handleChangeImageShiny} type="button" className="text-white bg-yellow-500 hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:focus:ring-yellow-900">
-                        Shiny</button>
-                    {props?.spriteFemale && <button onClick={handleChangeImageFemale} type="button" className=" text-white bg-purple-700 hover:bg-purple-800 focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900">
-                        Female</button>}
+
+                    <div className='inline-block'>
+                        <button onClick={handleChangeImageShiny} type="button" className="text-white bg-yellow-500 hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:focus:ring-yellow-900">
+                            Shiny</button>
+                        {props?.spriteFemale && <button onClick={handleChangeImageFemale} type="button" className=" text-white bg-purple-700 hover:bg-purple-800 focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900">
+                            Female</button>}
+                    </div>
 
                 </div >
 
-                <div className="p-6 m-2 border-solid rounded-md text-center bg-red-400">
+                <div className=" shadow-md p-6 m-2 border-solid rounded-md text-center bg-red-400">
                     <h1 className='font-bold capitalize pb-2'>Habilidades</h1>
                     {props.abilities.map((ability, idx) => (
                         <div key={idx}>
                             <span className='capitalize'>{ability.ability.name}</span>
                         </div>
                     ))}
-                    <br></br>
+                </div>
+
+                <div>
                     <h1 className='font-bold capitalize pb-2'>Tipos</h1>
                     {props.types.map((type, idx) => (
                         <div key={idx}>
                             <p className='capitalize' >{type.type.name}</p>
                         </div>
                     ))}
-
                 </div>
 
-                <div className="p-6 m-2 text-black font bg-red-400 pb-7">
+
+                <div className="p-4 m-2 text-black font bg-red-400 pb-7">
                     <h1 className='font-bold capitalize pb-2'>Movimientos</h1>
                     {props?.moves?.map((move, idx) => (
                         <div className='md:inline-block text-center m-1' key={idx}>

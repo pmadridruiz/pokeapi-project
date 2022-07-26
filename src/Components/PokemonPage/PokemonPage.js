@@ -24,6 +24,7 @@ function PokemonPage() {
         <>
             {pokemon?.name && (<div>
                 <CardPokemon
+                    id={pokemon?.id}
                     name={pokemon?.name}
                     spriteFront={pokemon?.sprites.front_default}
                     spriteBack={pokemon?.sprites.back_default}
@@ -33,6 +34,8 @@ function PokemonPage() {
                     stats={pokemon?.stats}
                     types={pokemon?.types}
                     weight={pokemon?.weight}
+                    moves={pokemon?.moves}
+                    baseExp={pokemon?.base_experience}
                 />
             </div>)}
         </>

@@ -1,8 +1,8 @@
-import { fetchPokemonDos } from '../../Services/getPokemonInfoDos'
 import { fetchPokemon } from '../../Services/getPokemonInfo'
-import SearchDos from '../SearchDos/SearchDos'
+import { fetchPokemonDos } from '../../Services/getPokemonInfoDos'
+import Search from '../Search/Search'
+import SearchBatalla from '../SearchBatalla/SearchBatalla'
 import { useState } from 'react'
-import Search from "../Search/Search"
 
 function Batalla() {
 
@@ -17,7 +17,6 @@ function Batalla() {
 
     const [disableAttackUno, setDisableAttackUno] = useState()
     const [disableAttackDos, setDisableAttackDos] = useState()
-
 
     const getPokemon = async (query) => {
         setCargando(true)
@@ -56,24 +55,29 @@ function Batalla() {
         console.log(attackDos)
     }
 
+
     return (
-        <div className="bg-[url('../../Assets/pokeArena.png')] bg-cover">
+        <div className="bg-[url('../../Assets/pokeBattleground.png')] bg-[length:100%_100%]">
 
             <div className="md:flex content-center h-screen justify-center ">
                 <div className='md:flex'>
                     <div className='md:w-64 m-2'>
                         <h1 className='text-center'>Pokemon [1]</h1>
-                        <Search getPokemon={getPokemon} />
+                        <div className='w-full'>
+                            <Search getPokemon={getPokemon} />
+                        </div>
                         {!cargando && pokemon ? (
                             <div className='grid text-center justify-center'>
                                 <h1 className='font-bold capitalize pt-2'>{pokemon.name}</h1>
-                                <div className='flex content-center justify-center'>
+                                {hpPokemonUno > 1 ? (<div className='flex content-center justify-center'>
                                     <img src={pokemon?.sprites.front_default} alt={pokemon.name} />
-                                </div>
-                                <div>Vida: {hpPokemonUno >= 25 ?
-                                    (<h1 className='text-green-500 font-bold'>{hpPokemonUno}</h1>) : hpPokemonUno <= 24 && hpPokemonUno > 0 ?
+                                </div>) : (<div className='flex content-center justify-center grayscale'>
+                                    <img src={pokemon?.sprites.front_default} alt={pokemon.name} />
+                                </div>)}
+                                <div>Vida {hpPokemonUno >= 25 ?
+                                    (<h1 className='text-green-600 font-bold'>{hpPokemonUno}</h1>) : hpPokemonUno <= 24 && hpPokemonUno > 0 ?
                                         (<h1 className='text-orange-500 font-bold'>{hpPokemonUno}</h1>) :
-                                        hpPokemonUno <= 0 && (<h1 className='text-red-800 font-bold'>PERDISTE</h1>)}
+                                        hpPokemonUno <= 0 && (<h1 className='text-red-800 font-bold'>0</h1>)}
                                 </div>
 
                                 <div className='flex items-center content-center justify-center pt-2'>
@@ -93,17 +97,21 @@ function Batalla() {
 
                     <div className='md:w-64 m-2'>
                         <h1 className='text-center'>Pokemon [2]</h1>
-                        <SearchDos getPokemonDos={getPokemonDos} />
+                        <div className='w-full'>
+                            <SearchBatalla getPokemonDos={getPokemonDos} />
+                        </div>
                         {!cargandoDos && pokemonDos ? (
                             <div className='grid text-center justify-center'>
                                 <h1 className='font-bold capitalize pt-2'>{pokemonDos.name}</h1>
-                                <div className='flex content-center justify-center'>
+                                {hpPokemonDos > 1 ? (<div className='flex content-center justify-center'>
                                     <img src={pokemonDos?.sprites.front_default} alt={pokemonDos.name} />
-                                </div>
-                                <div>Vida: {hpPokemonDos >= 25 ?
-                                    (<h1 className='text-green-500 font-bold'>{hpPokemonDos}</h1>) : hpPokemonDos <= 24 && hpPokemonDos > 0 ?
+                                </div>) : (<div className='flex content-center justify-center grayscale'>
+                                    <img src={pokemonDos?.sprites.front_default} alt={pokemonDos.name} />
+                                </div>)}
+                                <div>Vida {hpPokemonDos >= 25 ?
+                                    (<h1 className='text-green-600 font-bold'>{hpPokemonDos}</h1>) : hpPokemonDos <= 24 && hpPokemonDos > 0 ?
                                         (<h1 className='text-orange-500 font-bold'>{hpPokemonDos}</h1>) :
-                                        hpPokemonDos <= 0 && (<h1 className='text-red-800 font-bold'>PERDISTE</h1>)}
+                                        hpPokemonDos <= 0 && (<h1 className='text-red-800 font-bold'>0</h1>)}
                                 </div>
 
                                 <div className='flex items-center content-center justify-center pt-2'>

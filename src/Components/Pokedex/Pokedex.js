@@ -20,10 +20,13 @@ function Pokedex() {
 
     return (
         <div>
-            <Search getPokemon={getPokemon} />
+            <div className='m-2'>
+                <Search getPokemon={getPokemon} />
+            </div>
             {!cargando && pokemon ? (
                 <div>
                     <CardPokemon
+                        id={pokemon?.id}
                         name={pokemon?.name}
                         spriteFront={pokemon?.sprites.front_default}
                         spriteBack={pokemon?.sprites.back_default}
