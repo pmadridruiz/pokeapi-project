@@ -27,6 +27,10 @@ function CardPokemon(props) {
             <div className='text-center p-6 m-2 border-solid rounded-md shadow bg-red-400'>
                 <div className='flex items-center p-6 m-2 border-solid rounded-md text-center shadow bg-red-400'>
                     <h1 className='font-bold capitalize' > {props.name}</h1>
+                    <div className='flex'>
+                        <h1>Peso: {props?.weight}</h1>
+                    </div>
+
                     <img onMouseOver={handleChangeImageBack} onMouseOut={handleChangeImageFront} onClick={handleChangeImageFront} src={imageSource} alt={props?.name} />
 
                     <button onClick={handleChangeImageShiny} type="button" class="text-white bg-yellow-500 hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:focus:ring-yellow-900">

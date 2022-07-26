@@ -32,6 +32,8 @@ function Pokedex() {
                         abilities={pokemon?.abilities}
                         stats={pokemon?.stats}
                         types={pokemon?.types}
+                        weight={pokemon?.weight}
+
                     />
                 </div>) : null}
         </div>

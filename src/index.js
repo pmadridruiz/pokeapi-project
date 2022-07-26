@@ -19,11 +19,11 @@ root.render(
         <Route path='/pokedex/' element={<Pokedex />} />
         <Route path='/lista' element={<List />} />
         <Route path='/batalla' element={<Batalla />} />
-        <Route path='*' element={<Navigate to='/inicio' />} />
-        <Route path='' element={<Navigate to='/inicio' />} />
         <Route path='/pokemon' element={<PokemonPage />} >
           <Route path=":pokename" element={<PokemonPage />} />
         </Route>
+        <Route path='*' element={<Navigate to='/inicio' />} />
+        <Route path='' element={<Navigate to='/inicio' />} />
       </Route>
     </Routes>
   </BrowserRouter >

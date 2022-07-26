@@ -6,6 +6,7 @@ function Search(props) {
 
     const handleKeyDown = async (event) => {
         if (event.key === 'Enter') {
+            event.preventDefault()
             setBusqueda(event.target.value)
             if (busqueda === '') {
                 return alert('Pokemon no existe o campo vacio.')
