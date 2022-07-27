@@ -1,13 +1,13 @@
 import React from 'react'
 import '../Home/Home.css'
+import videoHome from '../../Assets/pokeOpening.mp4'
 
 function Home() {
     return (
         <>
-            <div className='absolute'>
-
-                <button>ASDASDAS</button>
-            </div>
+            <>
+                <video src={videoHome} autoPlay loop />
+            </>
         </>
     )
 }
