@@ -80,7 +80,7 @@ function CardPokemon(props) {
                         <div key={idx}>
                             <p className='font-medium uppercase pt-2 pb-1'>{stat.stat.name}</p>
                             <div className="w-full bg-gray-200 rounded-full">
-                                <div className="pb-2 rounded-full max-w-full text-white bg-black text-xs font-medium py-[1px] text-center content-center"> {`${stat.base_stat}`}</div>
+                                <div className="pb-2 rounded-full max-w-full text-white bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 text-xs font-medium py-[1px] text-center content-center"> {`${stat.base_stat}`}</div>
                             </div>
                         </div>
                     ))}
