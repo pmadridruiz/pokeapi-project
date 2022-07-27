@@ -1,2 +1,2 @@
-# Proyecto Pokémon App creado con ReactJS y Tailwindcss.
+## Proyecto Pokémon App creado con ReactJS y Tailwindcss.
 
