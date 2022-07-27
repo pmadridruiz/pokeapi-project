@@ -11,6 +11,7 @@ function Search(props) {
             if (busqueda === '') {
                 return alert('Pokemon no existe o campo vacio.')
             }
+            props.getPokemon(busqueda.toLowerCase())
         }
     }
 
@@ -25,7 +26,7 @@ function Search(props) {
 
     return (
         <>
-            <form className='' onChange={(e) => setBusqueda(e.target.value)}>
+            <form onChange={(e) => setBusqueda(e.target.value)}>
                 <label htmlFor="default-search" className="mb-2 text-sm font-medium text-black sr-only dark:text-black">Search</label>
                 <div className="relative pt-2">
                     <div className="flex pt-2 absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
