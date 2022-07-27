@@ -7,8 +7,8 @@ import './NavBar.css'
 function NavBar() {
 
     return (
-        <>
-            <nav className="flex border-gray-200 px-2 sm:px-4 py-2.5 dark:bg-red-400">
+        <div>
+            <nav className="md:flex border-gray-200 px-2 sm:px-4 py-2.5 bg-red-400">
                 <div className="md:container flex flex-wrap justify-between items-center mx-auto">
                     <Link to="/inicio" className="md:flex items-center">
                         <img src={PokeLogo} className="mr-3 h-6 sm:h-9" alt="Pokelogo" />
@@ -50,7 +50,7 @@ function NavBar() {
                 <Outlet />
             </section>
 
-        </>
+        </div>
 
     )
 

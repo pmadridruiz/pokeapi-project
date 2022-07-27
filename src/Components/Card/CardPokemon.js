@@ -78,9 +78,9 @@ function CardPokemon(props) {
                     <h1 className='font-bold capitalize pb-2'>Estadísticas Base</h1>
                     {props.stats.map((stat, idx) => (
                         <div key={idx}>
-                            <p className='font-medium uppercase pt-2 pb-1'>{stat.stat.name}</p>
+                            <p className='text-white font-medium uppercase pt-2 pb-1'>{stat.stat.name}</p>
                             <div className="w-full bg-gray-200 rounded-full">
-                                <div className="pb-2 rounded-full max-w-full text-white bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 text-xs font-medium py-[1px] text-center content-center"> {`${stat.base_stat}`}</div>
+                                <div className="pb-2 rounded-full max-w-full text-black bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 text-xs font-medium py-[1px] text-center content-center"> {`${stat.base_stat}`}</div>
                             </div>
                         </div>
                     ))}

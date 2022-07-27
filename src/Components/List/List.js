@@ -54,7 +54,7 @@ function List() {
                 </div>
             </div>
             <div onClick={() => { getAllPokemons() }} className="md:w-auto justify-center m-2 flex text-center text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-md text-sm py-2.5 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">
-                <button onClick={() => { getAllPokemons() }} type="button">Cargar más Pókemones</button>
+                <button onClick={() => { getAllPokemons() }} type="button">CARGAR MÁS POKÉMONES...</button>
             </div>
         </>
     )
