@@ -7,7 +7,7 @@ import './NavBar.css'
 function NavBar() {
 
     return (
-        <div>
+        <div data-testid='navbar-pokemonapp'>
             <nav className="md:flex border-gray-200 px-2 sm:px-4 py-2.5 bg-red-400">
                 <div className="md:container flex flex-wrap justify-between items-center mx-auto">
                     <Link to="/inicio" className="md:flex items-center">

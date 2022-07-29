@@ -26,15 +26,15 @@ function CardPokemon(props) {
         <div>
             <div className='text-center p-2 m-2 border-solid rounded bg-black'>
                 <div className='shadow-md flex flex-col items-center justify-center p-6 m-2 border-solid rounded-md text-center bg-gradient-to-r from-rose-500 via-red-400 to-red-500'>
-                    <h1 className='font-bold capitalize'> {props.name}</h1>
+                    <h1 className='font-bold capitalize' title='pokedex-card-pokeName'> {props.name}</h1>
 
-                    <img onMouseOver={handleChangeImageBack} onMouseOut={handleChangeImageFront} onClick={handleChangeImageFront} src={imageSource} alt={props?.name} />
-                    <h1 className='font-bold flex-col'> ID: <div className='inline font-normal'>#{props.id}</div></h1>
+                    <img onMouseOver={handleChangeImageBack} onMouseOut={handleChangeImageFront} onClick={handleChangeImageFront} src={imageSource} alt={props?.name} title='pokedex-card-pokeImage' />
+                    <h1 className='font-bold flex-col' title='pokedex-card-pokeId'> ID: <div className='inline font-normal'>#{props.id}</div></h1>
                     <div className='md:flex'>
-                        <h1 className='font-bold'>Peso: <div className='inline font-normal'>{props?.weight}</div></h1>
+                        <h1 className='font-bold'>Peso: <div className='inline font-normal' title='pokedex-card-pokeWeight'>{props?.weight}</div></h1>
                     </div>
                     <div className='md:flex pb-4'>
-                        <h1 className='font-bold'>Experiencia Base: <div className='inline font-normal'>{props?.baseExp} </div></h1>
+                        <h1 className='font-bold'>Experiencia Base: <div className='inline font-normal' title='pokedex-card-pokeBaseExp'>{props?.baseExp} </div></h1>
                     </div>
 
                     <div className='inline-block'>
