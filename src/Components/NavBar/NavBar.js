@@ -39,6 +39,14 @@ function NavBar() {
                                 <li>Batalla</li>
                             </Link>
 
+                            <Link to="/favoritos" className="md:block py-2 pr-10 pl-3 md:text-black border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:dark:hover:text-gray-300 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                                <li>Favoritos</li>
+                            </Link>
+
+                            <Link to="/historial" className="md:block py-2 pr-10 pl-3 md:text-black border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:dark:hover:text-gray-300 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                                <li>Historial</li>
+                            </Link>
+
                         </ul>
 
                     </div>

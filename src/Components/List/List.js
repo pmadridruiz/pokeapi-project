@@ -42,14 +42,8 @@ function List() {
                 <button disabled type="button">Consejo: Si pasas el cursor por arriba del pókemon te mostrará su imagen de frente y de espaldas.</button>
             </div>
             <div className='flex-1'>
-                <div title='list-card-pokemon' className='grid grid-cols-4 content-center gap-1'>
-                    {allPokemons.map((pokemon, idx) => (<CardList
-                        id={pokemon.id}
-                        name={pokemon.name}
-                        imageFront={pokemon.sprites.front_default}
-                        imageBack={pokemon.sprites.back_default}
-                        type={pokemon.types[0].type.name}
-                        baseExp={pokemon.base_experience}
+                <div className='grid grid-cols-4 content-center gap-1'>
+                    {allPokemons.map((pokemon, idx) => (<CardList pokemon={pokemon}
                         key={idx} />))}
                 </div>
             </div>
