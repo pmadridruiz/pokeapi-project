@@ -2,9 +2,10 @@ import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { GlobalContext } from "../../Context/GlobalState"
 
-function CardList({ pokemon }) {
 
-    const { addPokemonToFavorites, favoritos } = useContext(GlobalContext);
+function CardList({ pokemon, type }) {
+
+    const { addPokemonToFavorites, favoritos, removePokemonFromFavlist, addPokemonToHistory } = useContext(GlobalContext);
 
     const [imageSource, setImageSource] = useState(pokemon.sprites.front_default)
 
@@ -38,17 +39,18 @@ function CardList({ pokemon }) {
                     <div className='flex pr-12'>
 
                         <Link to={`/pokemon/${pokemon.name}`}>
-                            <img className='m-auto' src="https://img.icons8.com/color/30/000000/pokeball--v1.png" alt={pokemon.id} />
+                            <img className='m-auto' onClick={() => addPokemonToHistory(pokemon)} src="https://img.icons8.com/color/30/000000/pokeball--v1.png" alt={pokemon.id} />
                             <p className='font-bold text-blue-600'>Pókedex</p>
                         </Link>
                     </div>
+
                     {!favoritosDisabled ? (<button type="button" onClick={() => addPokemonToFavorites(pokemon)} className='grid'>
                         <img className='m-auto' src="https://img.icons8.com/fluency/30/pixel-heart.png" alt={pokemon.id} />
                         <p className='font-bold text-blue-600'>Favorito</p>
-                    </button>) : (<button type="button" disabled={favoritosDisabled} onClick={() => addPokemonToFavorites(pokemon)} className='grid'>
-                        <img className='m-auto grayscale' src="https://img.icons8.com/fluency/30/pixel-heart.png" alt={pokemon.id} />
-                        <p className='font-bold text-gray-600'>Favorito</p>
-                    </button>)}
+                    </button>) : <button type="button" onClick={() => removePokemonFromFavlist(pokemon.id)} className='grid btn-delete'>
+                        <img className='m-auto grayscale' src="https://img.icons8.com/color/30/close-window.png" alt={pokemon.id} />
+                        <p className='font-bold text-blue-600'>Favorito</p>
+                    </button>}
 
 
                 </div>

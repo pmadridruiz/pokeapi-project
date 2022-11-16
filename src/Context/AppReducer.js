@@ -5,6 +5,17 @@ export default (state, action) => {
             return {
                 ...state,
                 favoritos: [action.payload, ...state.favoritos]
+            };
+        case "REMOVE_FROM_FAVORITES":
+            return {
+                ...state,
+                favoritos: state.favoritos.filter(pokemon => pokemon.id !== action.payload)
+            };
+
+        case "ADD_POKEMON_TO_HISTORY":
+            return {
+                ...state,
+                vistos: [action.payload, ...state.vistos]
             }
         default:
             return state;

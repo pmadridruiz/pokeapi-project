@@ -10,30 +10,33 @@ import Batalla from './Components/Batalla/Batalla';
 import FavoritePage from './Components/Favorites/FavoritePage';
 import HistoryPage from './Components/History/HistoryPage';
 import { GlobalProvider } from './Context/GlobalState';
+import { Auth0Provider } from '@auth0/auth0-react'
 
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   // <React.StrictMode>
-  <GlobalProvider>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<NavBar />}>
-          <Route index path='/inicio' element={<Home />} />
-          <Route path='/pokedex/' element={<Pokedex />} />
-          <Route path='/lista' element={<List />} />
-          <Route path='/batalla' element={<Batalla />} />
-          <Route path='/pokemon' element={<PokemonPage />} >
-            <Route path=":pokename" element={<PokemonPage />} />
+  <Auth0Provider domain='dev-6hhqkqruxawk1q0r.us.auth0.com' clientId='8up8199Wt11d6nHoWMXXFRPdGmdwaapE' redirectUri={window.location.origin}>
+    <GlobalProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<NavBar />}>
+            <Route index path='/inicio' element={<Home />} />
+            <Route path='/pokedex/' element={<Pokedex />} />
+            <Route path='/lista' element={<List />} />
+            <Route path='/batalla' element={<Batalla />} />
+            <Route path='/pokemon' element={<PokemonPage />} >
+              <Route path=":pokename" element={<PokemonPage />} />
+            </Route>
+            <Route path='/favoritos' element={<FavoritePage />} />
+            <Route path='/historial' element={<HistoryPage />} />
+            <Route path='*' element={<Navigate to='/inicio' />} />
+            <Route path='' element={<Navigate to='/inicio' />} />
           </Route>
-          <Route path='/favoritos' element={<FavoritePage />} />
-          <Route path='/historial' element={<HistoryPage />} />
-          <Route path='*' element={<Navigate to='/inicio' />} />
-          <Route path='' element={<Navigate to='/inicio' />} />
-        </Route>
-      </Routes>
-    </BrowserRouter >
-  </GlobalProvider>
+        </Routes>
+      </BrowserRouter >
+    </GlobalProvider>
+  </Auth0Provider>
   // </React.StrictMode>
 );

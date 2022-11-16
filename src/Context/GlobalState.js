@@ -16,13 +16,22 @@ export const GlobalProvider = props => {
         localStorage.setItem('vistos', JSON.stringify(state.vistos))
     }, [state]);
 
+    // Actions
 
     const addPokemonToFavorites = pokemon => {
         dispatch({ type: "ADD_POKEMON_TO_FAVORITES", payload: pokemon })
     }
 
+    const removePokemonFromFavlist = id => {
+        dispatch({ type: "REMOVE_FROM_FAVORITES", payload: id })
+    }
+
+    const addPokemonToHistory = pokemon => {
+        dispatch({ type: "ADD_POKEMON_TO_HISTORY", payload: pokemon })
+    }
+
     return (
-        <GlobalContext.Provider value={{ favoritos: state.favoritos, vistos: state.vistos, addPokemonToFavorites }}>
+        <GlobalContext.Provider value={{ favoritos: state.favoritos, vistos: state.vistos, addPokemonToFavorites, removePokemonFromFavlist, addPokemonToHistory }}>
             {props.children}
         </GlobalContext.Provider>
     )

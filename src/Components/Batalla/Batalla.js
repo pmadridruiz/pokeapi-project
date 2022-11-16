@@ -58,7 +58,6 @@ function Batalla() {
 
     return (
         <div className="bg-[url('../../Assets/pokeBattleground.png')] bg-[length:100%_100%]">
-
             <div className="md:flex content-center h-screen justify-center ">
                 <div className='md:flex'>
                     <div className='md:w-64 m-2'>
