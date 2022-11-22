@@ -17,7 +17,7 @@ import { Auth0Provider } from '@auth0/auth0-react'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   // <React.StrictMode>
-  <Auth0Provider domain='dev-6hhqkqruxawk1q0r.us.auth0.com' clientId='8up8199Wt11d6nHoWMXXFRPdGmdwaapE' redirectUri={window.location.origin}>
+  <Auth0Provider domain='dev-i8z1aybtwhwdzoor.us.auth0.com' clientId='AlC88zVgIvDgGICZP0kwu37iVMNzVlYO' redirectUri={window.location.origin}>
     <GlobalProvider>
       <BrowserRouter>
         <Routes>
