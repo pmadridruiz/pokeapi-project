@@ -3,12 +3,12 @@ import { useAuth0 } from '@auth0/auth0-react'
 
 const LogoutButton = () => {
 
-    // const uriLogout = 'https://pokedexapp0213.herokuapp.com/inicio'
+    const uriLogout = 'https://pokedexapp0213.herokuapp.com/inicio'
     const { logout } = useAuth0();
 
     function logoutClear() {
         localStorage.clear()
-        logout({ returnTo: window.location.origin })
+        logout({ returnTo: uriLogout })
 
     }
 
