@@ -11,7 +11,7 @@ const Profile = () => {
     return (
         isAuthenticated && (
             <div className='flex-col mr-6'>
-                <h2>Hola, {user.name}{' '}</h2>
+                <h2>Bienvenido/a, {user.name}{' '}</h2>
             </div>
         )
     )
