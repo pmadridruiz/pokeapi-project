@@ -19,6 +19,7 @@ function NavBar() {
                     <Link to="/inicio" className="md:flex items-center">
                         <img src={PokeLogo} className="mr-3 h-6 sm:h-9" alt="Pokelogo" />
                     </Link>
+
                     <div className="flex md:order-2">
                         <div className='m-auto flex'>
                             {isAuthenticated ?
@@ -30,6 +31,7 @@ function NavBar() {
 
                         </div>
                     </div>
+
                     <div className="flex justify-between w-full md:flex md:w-auto md:order-1" id="navbar-search">
                         <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
 
