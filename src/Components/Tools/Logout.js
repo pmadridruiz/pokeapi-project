@@ -14,7 +14,7 @@ const LogoutButton = () => {
 
     return (
 
-        <button className="text-white bg-[#050708] hover:bg-black-90 focus:ring-0 focus:outline-none focus:ring-[#050708]/50 font-medium rounded-lg text-sm text-center inline-flex items-center dark:focus:ring-[#050708]/50 dark:hover:bg-[#050708]/30 m-1 p-1" type="button" onClick={logoutClear}> Salir</button >
+        <button className="text-white bg-[#050708] hover:bg-black-90 focus:ring-0 focus:outline-none focus:ring-[#050708]/50 font-medium rounded-lg text-sm text-center inline-flex items-center dark:focus:ring-[#050708]/50 dark:hover:bg-[#050708]/30 m-auto p-auto" type="button" onClick={logoutClear}> Salir</button >
     )
 }
 
