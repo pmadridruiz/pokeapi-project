@@ -1,5 +1,6 @@
 // Barra Buscadora SEARCH
 import PokeLogo from '../../Assets/pokemonlogo.png'
+import { useAuth0 } from '@auth0/auth0-react'
 import { Link, Outlet } from 'react-router-dom'
 import './NavBar.css'
 import LoginButton from '../Tools/Login'
@@ -8,6 +9,8 @@ import Profile from '../Tools/Profile'
 
 
 function NavBar() {
+
+    const { isAuthenticated } = useAuth0();
 
     return (
         <div data-testid='navbar-pokemonapp'>
@@ -18,6 +21,12 @@ function NavBar() {
                     </Link>
                     <div className="flex md:order-2">
                         <div className='m-auto flex'>
+                            {isAuthenticated ?
+                                (<>
+                                    <Profile />
+                                    <LogoutButton />
+                                </>) : (
+                                    <LoginButton />)}
 
                         </div>
                     </div>
@@ -47,9 +56,7 @@ function NavBar() {
                             <Link to="/historial" className="md:block py-2 pr-10 pl-3 md:text-black border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-gray-300 md:p-0 md:dark:hover:text-gray-300 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
                                 <li>Historial</li>
                             </Link>
-                            <Profile />
-                            <LoginButton />
-                            <LogoutButton />
+
 
                         </ul>
 

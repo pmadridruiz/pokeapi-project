@@ -24,10 +24,9 @@ function CardPokemon(props) {
     return (
 
         <div>
-            <div className='flex text-center p-2 m-2 border-solid rounded'>
-                <div className='flex shadow-md flex-col items-center justify-center p-6 m-2 border-solid rounded-md text-center bg-gradient-to-r from-rose-500 via-red-400 to-red-500'>
+            <div className='inline-block text-center p-2 m-auto border-solid rounded'>
+                <div className='flex flex-col shadow-md items-center justify-center p-6 m-2 border-solid rounded-md text-center bg-gradient-to-r from-rose-500 via-red-400 to-red-500'>
                     <h1 className='font-bold capitalize' title='pokedex-card-pokeName'> {props.name}</h1>
-
                     <img onMouseOver={handleChangeImageBack} onMouseOut={handleChangeImageFront} onClick={handleChangeImageFront} src={imageSource} alt={props?.name} title='pokedex-card-pokeImage' />
                     <h1 className='font-bold flex-col' title='pokedex-card-pokeId'> ID: <div className='inline font-normal'>#{props.id}</div></h1>
                     <div className='md:flex'>
@@ -44,16 +43,7 @@ function CardPokemon(props) {
                             Female</button>}
                     </div>
 
-                    <div className="shadow-md p-6 m-2 border-solid rounded-md text-center bg-gradient-to-r from-rose-500 via-red-400 to-red-500">
-                        <h1 className='font-bold capitalize pb-2'>Habilidades</h1>
-                        {props.abilities.map((ability, idx) => (
-                            <div key={idx}>
-                                <button disabled type="button" className="m-2 items-center capitalize text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">{ability.ability.name}</button>
-                            </div>
-                        ))}
-                    </div>
-
-                    <div className='shadow-md p-6 m-2 border-solid rounded-md text-center bg-gradient-to-r from-rose-500 via-red-400 to-red-500'>
+                    <div className='p-4 m-2'>
                         <h1 className='font-bold capitalize pb-2'>Tipos</h1>
                         {props.types.map((type, idx) => (
                             <div className='flex justify-center content-center' key={idx}>
@@ -62,10 +52,22 @@ function CardPokemon(props) {
                         ))}
                     </div>
 
+
+                    <div className="p-4 m-2 rounded-md text-center ">
+                        <h1 className='font-bold capitalize pb-2'>Habilidades</h1>
+                        {props.abilities.map((ability, idx) => (
+                            <div key={idx}>
+                                <button disabled type="button" className="m-2 items-center capitalize text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">{ability.ability.name}</button>
+                            </div>
+                        ))}
+                    </div>
+
+
+
                 </div >
 
 
-                <div className="p-4 m-2 pb-7 shadow-md border-solid rounded-md text-center bg-gradient-to-r from-rose-500 via-red-400 to-red-500">
+                <div className="p-4 m-2 pb-8 shadow-md border-solid rounded-md text-center bg-gradient-to-r from-rose-500 via-red-400 to-red-500">
                     <h1 className='font-bold capitalize pb-4'>Movimientos</h1>
                     {props?.moves?.map((move, idx) => (
                         <div className='md:inline-block text-center m-1' key={idx}>
