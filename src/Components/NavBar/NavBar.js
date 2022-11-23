@@ -20,7 +20,7 @@ function NavBar() {
                         <img src={PokeLogo} className="mr-3 h-6 sm:h-9" alt="Pokelogo" />
                     </Link>
 
-                    <div className="flex md:order-2">
+                    <div className="flex">
                         <div className='m-auto flex'>
                             {isAuthenticated ?
                                 (<>
