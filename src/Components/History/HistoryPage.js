@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { GlobalContext } from '../../Context/GlobalState'
-import FavoriteCard from '../Card/FavoriteCard'
+import HistoryCard from '../Card/HistoryCard'
 
 function HistoryPage() {
 
@@ -13,9 +13,9 @@ function HistoryPage() {
             <br></br>
 
             {vistos.length > 0 ? (
-                <div className="pokemon-grid">
+                <div className="grid grid-cols-4 content-center gap-1">
                     {vistos.map((pokemon) => (
-                        <FavoriteCard pokemon={pokemon} key={pokemon.id} type="vistos" />
+                        <HistoryCard pokemon={pokemon} key={pokemon.id} type="vistos" />
                     ))}
 
                 </div>

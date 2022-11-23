@@ -1,13 +1,12 @@
-import React, { useContext } from 'react'
-import { GlobalContext } from '../../Context/GlobalState';
+import React from 'react'
 
-const FavoriteCard = ({ pokemon, type }) => {
 
-    const { removePokemonFromFavlist } = useContext(GlobalContext);
+const HistoryCard = ({ pokemon }) => {
+
+
     return (
         <div className=''>
             <div className='bg-gradient-to-r from-green-300 to-purple-400 flex justify-center items-center flex-col pb-4 shadow hover:shadow-lg border-gray-500 border-2 rounded-md m-2'>
-
                 <div>
                     <img src={pokemon.sprites.front_default} alt={pokemon.name} />
                 </div >
@@ -16,15 +15,10 @@ const FavoriteCard = ({ pokemon, type }) => {
                 <small className='capitalize' title='pokemonType'> Tipo: {pokemon.types[0].type.name}</small>
 
                 <small className='text-center pb-4' title='pokemonBaseExp'>Experiencia Base: {pokemon.base_experience}</small>
-                <div className=''>
-                    <button type="button" onClick={() => removePokemonFromFavlist(pokemon.id)} className='grid btn-delete'>
-                        <img className='m-auto grayscale' src="https://img.icons8.com/color/30/close-window.png" alt={pokemon.id} />
-                        <p className='font-bold text-blue-600'>Eliminar Favorito</p>
-                    </button>
-                </div>
+
             </div>
         </div >
     )
 }
 
-export default FavoriteCard
+export default HistoryCard

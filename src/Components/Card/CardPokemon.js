@@ -24,14 +24,14 @@ function CardPokemon(props) {
     return (
 
         <div>
-            <div className='text-center p-2 m-2 border-solid rounded bg-black'>
-                <div className='shadow-md flex flex-col items-center justify-center p-6 m-2 border-solid rounded-md text-center bg-gradient-to-r from-rose-500 via-red-400 to-red-500'>
+            <div className='flex text-center p-2 m-2 border-solid rounded'>
+                <div className='flex shadow-md flex-col items-center justify-center p-6 m-2 border-solid rounded-md text-center bg-gradient-to-r from-rose-500 via-red-400 to-red-500'>
                     <h1 className='font-bold capitalize' title='pokedex-card-pokeName'> {props.name}</h1>
 
                     <img onMouseOver={handleChangeImageBack} onMouseOut={handleChangeImageFront} onClick={handleChangeImageFront} src={imageSource} alt={props?.name} title='pokedex-card-pokeImage' />
                     <h1 className='font-bold flex-col' title='pokedex-card-pokeId'> ID: <div className='inline font-normal'>#{props.id}</div></h1>
                     <div className='md:flex'>
-                        <h1 className='font-bold'>Peso: <div className='inline font-normal' title='pokedex-card-pokeWeight'>{props?.weight}</div></h1>
+                        <h1 className='font-bold'>Peso: <div className='inline font-normal' title='pokedex-card-pokeWeight'>{(props?.weight / 10).toFixed(1)} kg</div></h1>
                     </div>
                     <div className='md:flex pb-4'>
                         <h1 className='font-bold'>Experiencia Base: <div className='inline font-normal' title='pokedex-card-pokeBaseExp'>{props?.baseExp} </div></h1>
@@ -44,25 +44,25 @@ function CardPokemon(props) {
                             Female</button>}
                     </div>
 
+                    <div className="shadow-md p-6 m-2 border-solid rounded-md text-center bg-gradient-to-r from-rose-500 via-red-400 to-red-500">
+                        <h1 className='font-bold capitalize pb-2'>Habilidades</h1>
+                        {props.abilities.map((ability, idx) => (
+                            <div key={idx}>
+                                <button disabled type="button" className="m-2 items-center capitalize text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">{ability.ability.name}</button>
+                            </div>
+                        ))}
+                    </div>
+
+                    <div className='shadow-md p-6 m-2 border-solid rounded-md text-center bg-gradient-to-r from-rose-500 via-red-400 to-red-500'>
+                        <h1 className='font-bold capitalize pb-2'>Tipos</h1>
+                        {props.types.map((type, idx) => (
+                            <div className='flex justify-center content-center' key={idx}>
+                                <button disabled type="button" className=" m-2 items-center capitalize text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">{type.type.name}</button>
+                            </div>
+                        ))}
+                    </div>
+
                 </div >
-
-                <div className="shadow-md p-6 m-2 border-solid rounded-md text-center bg-gradient-to-r from-rose-500 via-red-400 to-red-500">
-                    <h1 className='font-bold capitalize pb-2'>Habilidades</h1>
-                    {props.abilities.map((ability, idx) => (
-                        <div key={idx}>
-                            <button disabled type="button" className="m-2 items-center capitalize text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">{ability.ability.name}</button>
-                        </div>
-                    ))}
-                </div>
-
-                <div className='shadow-md p-6 m-2 border-solid rounded-md text-center bg-gradient-to-r from-rose-500 via-red-400 to-red-500'>
-                    <h1 className='font-bold capitalize pb-2'>Tipos</h1>
-                    {props.types.map((type, idx) => (
-                        <div className='flex justify-center content-center' key={idx}>
-                            <button disabled type="button" className=" m-2 items-center capitalize text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">{type.type.name}</button>
-                        </div>
-                    ))}
-                </div>
 
 
                 <div className="p-4 m-2 pb-7 shadow-md border-solid rounded-md text-center bg-gradient-to-r from-rose-500 via-red-400 to-red-500">

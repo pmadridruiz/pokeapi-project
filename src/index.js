@@ -12,16 +12,16 @@ import HistoryPage from './Components/History/HistoryPage';
 import { GlobalProvider } from './Context/GlobalState';
 import { Auth0Provider } from '@auth0/auth0-react'
 
-
+const uri = 'https://pokedexapp0213.herokuapp.com/inicio'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   // <React.StrictMode>
-  <Auth0Provider domain='dev-i8z1aybtwhwdzoor.us.auth0.com' clientId='AlC88zVgIvDgGICZP0kwu37iVMNzVlYO' redirectUri={window.location.origin}>
+  <Auth0Provider domain='dev-i8z1aybtwhwdzoor.us.auth0.com' clientId='AlC88zVgIvDgGICZP0kwu37iVMNzVlYO' redirectUri={uri}>
     <GlobalProvider>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<NavBar />}>
+          <Route exact path="/" element={<NavBar />} >
             <Route index path='/inicio' element={<Home />} />
             <Route path='/pokedex/' element={<Pokedex />} />
             <Route path='/lista' element={<List />} />

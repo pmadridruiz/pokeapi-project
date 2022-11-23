@@ -57,11 +57,11 @@ function Batalla() {
 
 
     return (
-        <div className="bg-[url('../../Assets/pokeBattleground.png')] bg-[length:100%_100%]">
+        <div className="bg-white pt-6">
             <div className="md:flex content-center h-screen justify-center ">
                 <div className='md:flex'>
                     <div className='md:w-64 m-2'>
-                        <h1 className='text-center'>Pokemon [1]</h1>
+                        <h1 className='text-center'>Pokémon [1]</h1>
                         <div className='w-full pb-4'>
                             <Search getPokemon={getPokemon} />
                         </div>
@@ -80,10 +80,10 @@ function Batalla() {
                                 </div>
 
                                 <div className='flex items-center content-center justify-center pt-2'>
-                                    <button onClick={() => attackPokemonUno('attack')} disabled={disableAttackUno || hpPokemonUno <= 0} type="button" className="inline-block px-6 py-2.5 bg-purple-600 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-purple-700 hover:shadow-lg focus:bg-purple-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-purple-800 active:shadow-lg transition duration-150 ease-in-out">Ataque</button>
+                                    <button onClick={() => attackPokemonUno('attack')} disabled={disableAttackUno || hpPokemonUno <= 0} type="button" className="inline-block px-6 py-2.5 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md bg-red-600 hover:bg-red-700 hover:shadow-lg focus:bg-red-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-600 active:shadow-lg transition duration-150 ease-in-out">Ataque</button>
                                 </div>
                                 <div className='flex items-center content-center justify-center pt-2'>
-                                    <button onClick={() => attackPokemonUno('special-attack')} disabled={disableAttackUno || hpPokemonUno <= 0} type="button" className="grayscale inline-block px-6 py-2.5 bg-gray-800 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-gray-900 hover:shadow-lg focus:bg-gray-900 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-900 active:shadow-lg transition duration-150 ease-in-out">Ataque Especial</button>
+                                    <button onClick={() => attackPokemonUno('special-attack')} disabled={disableAttackUno || hpPokemonUno <= 0} type="button" className="inline-block px-6 py-2.5 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-0 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 active:shadow-lg transition duration-150 ease-in-out">Ataque Especial</button>
                                 </div>
 
                             </div>) : null}
@@ -94,11 +94,11 @@ function Batalla() {
                         <div className='pt-12'>
 
                         </div>
-                        {(hpPokemonDos < 0 || hpPokemonUno < 0) && (<button onClick={() => window.location.reload(false)} type="button" class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">Nueva Pelea</button>)}
+                        {(hpPokemonDos < 0 || hpPokemonUno < 0) && (<button onClick={() => window.location.reload(false)} type="button" class="text-white bg-gray-900 border border-gray-300 focus:outline-none focus:ring-0 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">Nueva Pelea</button>)}
                     </div>
 
                     <div className='md:w-64 m-2'>
-                        <h1 className='text-center'>Pokemon [2]</h1>
+                        <h1 className='text-center'>Pokémon [2]</h1>
                         <div className='w-full pb-4'>
                             <SearchBatalla getPokemonDos={getPokemonDos} />
                         </div>
@@ -117,10 +117,10 @@ function Batalla() {
                                 </div>
 
                                 <div className='flex items-center content-center justify-center pt-2'>
-                                    <button onClick={() => attackPokemonDos('attack')} disabled={disableAttackDos || hpPokemonDos <= 0} type="button" className="inline-block px-6 py-2.5 bg-purple-600 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-purple-700 hover:shadow-lg focus:bg-purple-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-purple-800 active:shadow-lg transition duration-150 ease-in-out">Ataque</button>
+                                    <button onClick={() => attackPokemonDos('attack')} disabled={disableAttackDos || hpPokemonDos <= 0} type="button" className="inline-block px-6 py-2.5 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md bg-red-600 hover:bg-red-700 hover:shadow-lg focus:bg-red-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-600 active:shadow-lg transition duration-150 ease-in-out">Ataque</button>
                                 </div>
                                 <div className='flex items-center content-center justify-center pt-2'>
-                                    <button onClick={() => attackPokemonDos('special-attack')} disabled={disableAttackDos || hpPokemonDos <= 0} type="button" className="inline-block px-6 py-2.5 bg-gray-800 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-gray-900 hover:shadow-lg focus:bg-gray-900 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-900 active:shadow-lg transition duration-150 ease-in-out">Ataque Especial</button>
+                                    <button onClick={() => attackPokemonDos('special-attack')} disabled={disableAttackDos || hpPokemonDos <= 0} type="button" className="inline-block px-6 py-2.5 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-0 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 active:shadow-lg transition duration-150 ease-in-out">Ataque Especial</button>
                                 </div>
 
                             </div>) : null}
