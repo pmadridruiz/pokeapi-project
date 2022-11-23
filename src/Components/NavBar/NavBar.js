@@ -21,7 +21,7 @@ function NavBar() {
                     </Link>
 
                     <div className="flex md:order-2">
-                        <div className='m-auto flex'>
+                        <div className='m-2 flex'>
                             {isAuthenticated ?
                                 (<>
                                     <Profile />
