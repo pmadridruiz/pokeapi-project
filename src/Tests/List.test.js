@@ -18,7 +18,7 @@ describe('Unit testing de List', () => {
         render(<MemoryRouter>
             <List />
         </MemoryRouter>);
-        const pokemonAppList = screen.getByTitle('list-card-pokemon')
+        const pokemonAppList = screen.getByTestId('list-card-pokemon')
         expect(pokemonAppList).toBeTruthy()
 
     })

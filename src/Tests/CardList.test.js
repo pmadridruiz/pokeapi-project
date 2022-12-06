@@ -18,7 +18,7 @@ describe('Unit testing de CardList', () => {
         render(<MemoryRouter>
             <CardList />
         </MemoryRouter>);
-        const imagenPokemon = screen.getByTitle('imgPokemon')
+        const imagenPokemon = screen.getByTestId('imgPokemon')
         expect(imagenPokemon).toBeTruthy()
 
     })
@@ -27,7 +27,7 @@ describe('Unit testing de CardList', () => {
         render(<MemoryRouter>
             <CardList />
         </MemoryRouter>);
-        const pokemonName = screen.getByTitle('pokemonName')
+        const pokemonName = screen.getByTestId('pokemonName')
         expect(pokemonName).toBeTruthy()
     })
 
@@ -35,7 +35,7 @@ describe('Unit testing de CardList', () => {
         render(<MemoryRouter>
             <CardList />
         </MemoryRouter>);
-        const pokemonBaseExp = screen.getByTitle('pokemonBaseExp')
+        const pokemonBaseExp = screen.getByTestId('pokemonBaseExp')
 
         expect(pokemonBaseExp).toBeTruthy()
     })
