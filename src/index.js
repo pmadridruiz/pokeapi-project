@@ -12,7 +12,7 @@ import HistoryPage from './Components/History/HistoryPage';
 import { GlobalProvider } from './Context/GlobalState';
 import { Auth0Provider } from '@auth0/auth0-react'
 
-const uri = 'https://pokedexapp0213.herokuapp.com/inicio'
+const uri = 'https://main.d1t3k1ct340k91.amplifyapp.com/inicio'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
