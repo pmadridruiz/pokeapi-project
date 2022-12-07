@@ -12,10 +12,10 @@ function FavoritePage() {
             <br></br>
             <h1 className='text-5xl text-center'>Mis Pokémones Favoritos</h1>
             <br></br>
-            {favoritos.length > 0 ? (
+            {favoritos?.length > 0 ? (
                 <div className="grid grid-cols-4 content-center gap-1">
-                    {favoritos.map((pokemon) => (
-                        <FavoriteCard pokemon={pokemon} key={pokemon.id} type="favorites" />
+                    {favoritos?.map((pokemon) => (
+                        <FavoriteCard pokemon={pokemon} key={pokemon?.id} type="favorites" />
                     ))}
 
                 </div>

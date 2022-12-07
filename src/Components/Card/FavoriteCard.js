@@ -1,24 +1,24 @@
 import React, { useContext } from 'react'
 import { GlobalContext } from '../../Context/GlobalState';
 
-const FavoriteCard = ({ pokemon, type }) => {
+const FavoriteCard = ({ pokemon }) => {
 
     const { removePokemonFromFavlist } = useContext(GlobalContext);
     return (
-        <div className=''>
+        <div>
             <div className='bg-gradient-to-r from-green-300 to-purple-400 flex justify-center items-center flex-col pb-4 shadow hover:shadow-lg border-gray-500 border-2 rounded-md m-2'>
 
-                <div>
-                    <img src={pokemon.sprites.front_default} alt={pokemon.name} />
+                <div data-testid='pokemonCardImageFav'>
+                    <img src={pokemon?.sprites?.front_default} alt={pokemon?.name} />
                 </div >
 
-                <h2 className='font-bold capitalize' title='pokemonName'>{pokemon.name}</h2>
-                <small className='capitalize' title='pokemonType'> Tipo: {pokemon.types[0].type.name}</small>
+                <h2 className='font-bold capitalize' data-testid='pokemonNameFavCard'>{pokemon?.name}</h2>
+                <small className='capitalize' data-testid='pokemonTypeFavCard'> Tipo: {pokemon?.types[0].type?.name}</small>
 
-                <small className='text-center pb-4' title='pokemonBaseExp'>Experiencia Base: {pokemon.base_experience}</small>
+                <small className='text-center pb-4' data-testid='pokemonBaseExpFavCard'>Experiencia Base: {pokemon?.base_experience}</small>
                 <div className=''>
-                    <button type="button" onClick={() => removePokemonFromFavlist(pokemon.id)} className='grid btn-delete'>
-                        <img className='m-auto grayscale' src="https://img.icons8.com/color/30/close-window.png" alt={pokemon.id} />
+                    <button data-testid='pokemonButtonFavCard' type="button" onClick={() => removePokemonFromFavlist(pokemon?.id)} className='grid btn-delete'>
+                        <img className='m-auto grayscale' src="https://img.icons8.com/color/30/close-window.png" alt={pokemon?.id} />
                         <p className='font-bold text-blue-600'>Eliminar Favorito</p>
                     </button>
                 </div>
